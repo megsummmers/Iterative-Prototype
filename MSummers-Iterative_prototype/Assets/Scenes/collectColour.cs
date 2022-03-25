@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class collectColour : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class collectColour : MonoBehaviour
   public Material redMat;
   public MeshRenderer gemRend;
   public GameObject walls;
+  public TMP_Text redCheck;
   private bool anim = false;
 
     // Start is called before the first frame update
@@ -20,6 +22,7 @@ public class collectColour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+      //move walls down
       if(anim){
         Debug.Log(":D");
         walls.transform.Translate(0, -0.1f, 0);
@@ -33,20 +36,10 @@ public class collectColour : MonoBehaviour
         gemRend.enabled = false;
         //change gem colour
         redGem.GetComponent<Renderer>().material = redMat;
+        //strikethrough red gem on checklist
+        redCheck.fontStyle = FontStyles.Underline;
+        //move the walls
         anim = true;
-        //move walls
-
-        // if(anim == true){
-        //   Debug.Log(":D");
-        //   walls = GameObject.FindGameObjectsWithTag("Movable");
-        //   foreach(GameObject w in walls){
-        //     w.transform.Translate (Vector3.down * Time.deltaTime, Space.World);
-        //     float posY = gameObject.transform.position.y;
-        //     if (posY <= -8){
-        //       anim = false;
-        //     }
-        //   }
-        // }
       }
     }
 }

@@ -7,7 +7,8 @@ public class cutscene : MonoBehaviour
 {
   public Camera playerCam;
   public Camera cutsceneCam;
-  public TMP_Text intro;
+  public GameObject introtxt;
+  public GameObject bookText;
 
   bool playing = true;
     // Start is called before the first frame update
@@ -28,7 +29,8 @@ public class cutscene : MonoBehaviour
           playing = false;
           playerCam.enabled = true;
           cutsceneCam.enabled = false;
-          intro.gameObject.SetActive(false);
+          introtxt.gameObject.SetActive(false);
+          bookText.GetComponent<Canvas>().enabled = true;
         } else if(posY <= 6){
           transform.Translate(Time.deltaTime, 0, 0, Space.World);
         } else {
