@@ -3,7 +3,9 @@ guid: bb03c45bd62b54c5c9e8d434f10bf135
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - redGem: {fileID: 8171673011687773332, guid: 88dcc16b8586e48d596ab6cf0ae6a4f8, type: 3}
+  - redMat: {fileID: 2100000, guid: d76af03a6d8a74b95a42013f8fc9301a, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
