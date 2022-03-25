@@ -254,6 +254,7 @@ m_PackageAssets:
         - 2.1.0-preview.5
         - 2.1.0-preview.6
         compatible:
+        - 1.15.4
         - 1.15.7
         - 1.15.9
         - 1.15.12
@@ -3380,4 +3381,4 @@ m_PackageAssets:
   m_LocalPackages:
     m_LocalFileStatus: []
 m_ProjectPath: /Users/megsummers/Desktop/CART 315 hub/Iterative-Prototype/MSummers-Iterative_prototype/Packages
-m_EditorVersion: 2020.3.26f1 (7298b473bc1a)
+m_EditorVersion: 2020.3.25f1 (9b9180224418)

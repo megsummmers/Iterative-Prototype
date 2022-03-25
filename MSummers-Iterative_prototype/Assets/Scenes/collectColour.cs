@@ -7,6 +7,7 @@ public class collectColour : MonoBehaviour
   //public GameObject mazeWalls;
   public GameObject redGem;
   public Material redMat;
+  private GameObject[] walls;
   bool anim = false;
 
     // Start is called before the first frame update
@@ -33,10 +34,13 @@ public class collectColour : MonoBehaviour
         //move walls
         if(anim == true){
           Debug.Log(":D");
-          transform.parent.transform.Translate(0, -Time.deltaTime, 0, Space.World);
-          float posY = gameObject.transform.parent.transform.position.y;
-          if (posY <= -8){
-            anim = false;
+          walls = GameObject.FindGameObjectsWithTag("Movable");
+          foreach(GameObject w in walls){
+            w.transform.Translate (Vector3.down * Time.deltaTime, Space.World);
+            float posY = gameObject.transform.position.y;
+            if (posY <= -8){
+              anim = false;
+            }
           }
         }
       }
