@@ -7,7 +7,7 @@ public class cutscene : MonoBehaviour
 {
   public Camera playerCam;
   public Camera cutsceneCam;
-  public GameObject introtxt;
+  public GameObject introText;
   public GameObject bookText;
 
   bool playing = true;
@@ -29,12 +29,14 @@ public class cutscene : MonoBehaviour
           playing = false;
           playerCam.enabled = true;
           cutsceneCam.enabled = false;
-          introtxt.gameObject.SetActive(false);
-          bookText.GetComponent<Canvas>().enabled = true;
+          introText.gameObject.SetActive(false);
+          bookText.gameObject.SetActive(true);
+          //bookText.GetComponent<Canvas>().enabled = true;
         } else if(posY <= 6){
           transform.Translate(Time.deltaTime, 0, 0, Space.World);
         } else {
           transform.Translate(Time.deltaTime, -Time.deltaTime, 0, Space.World);
+          bookText.gameObject.SetActive(false);
         }
       }
     }
