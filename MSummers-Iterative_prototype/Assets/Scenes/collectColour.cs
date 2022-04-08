@@ -6,11 +6,11 @@ using TMPro;
 public class collectColour : MonoBehaviour
 {
   //public GameObject mazeWalls;
-  public GameObject redGem;
-  public Material redMat;
-  public MeshRenderer gemRend;
+  public GameObject gem;
+  public Material mat;
+  public MeshRenderer rend;
   public GameObject walls;
-  public TMP_Text redCheck;
+  public TMP_Text gemCheck;
   private bool anim = false;
 
     // Start is called before the first frame update
@@ -24,7 +24,6 @@ public class collectColour : MonoBehaviour
     {
       //move walls down
       if(anim){
-        Debug.Log(":D");
         walls.transform.Translate(0, -0.1f, 0);
       }
     }
@@ -32,14 +31,15 @@ public class collectColour : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
       if(other.CompareTag("Player")){
-        //hides object
-        gemRend.enabled = false;
         //change gem colour
-        redGem.GetComponent<Renderer>().material = redMat;
+        gem.GetComponent<Renderer>().material = mat;
         //strikethrough red gem on checklist
-        redCheck.fontStyle = FontStyles.Underline;
-        //move the walls
-        anim = true;
+        gemCheck.fontStyle = FontStyles.Underline;
+        //hides object
+        rend.enabled = false;
+        if(gem.name == "Red_gem"){
+          anim = true;
+        }
       }
     }
 }

@@ -26,7 +26,6 @@ public class activateStar : MonoBehaviour
   void OnTriggerEnter(Collider other)
   {
     if(other.CompareTag("Player")){
-      Debug.Log("Picked up star");
       //activate Halo around star
       Component halo = GetComponent("Halo");
       halo.GetType().GetProperty("enabled").SetValue(halo, true, null);
